@@ -62,9 +62,6 @@
     .section-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 35px; opacity: 0.3; font-weight: 500; }
     .large-text { font-size: clamp(24px, 3vw, 40px); line-height: 1.15; font-weight: 300; margin-bottom: 25px; letter-spacing: -1.3px; }
     .body-text { font-size: 15px; line-height: 1.7; opacity: 0.65; max-width: 720px; margin-bottom: 16px; font-weight: 300; }
-    .films-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-top: 45px; }
-    .films-grid img { width: 100%; aspect-ratio: 2/3; object-fit: cover; filter: grayscale(0.1); transition: all 0.4s ease; cursor: pointer; background: #0a0a0a; }
-    .films-grid img:hover { filter: grayscale(0); transform: scale(1.03); box-shadow: 0 10px 40px rgba(255,255,255,0.08); }
     .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 45px; }
     .team-member { text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
     .team-member.visible { opacity: 1; transform: translateY(0); }
@@ -93,7 +90,7 @@
     .contact-email a { color: #fff; text-decoration: none; border-bottom: 1px solid #1a1a1a; transition: all 0.3s; }
     .contact-email a:hover { border-color: #fff; opacity: 0.4; }
     footer { padding: 45px 5%; text-align: center; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.2; border-top: 1px solid #080808; }
-    @media (max-width: 768px) { nav { padding: 16px 5%; } .logo img { height: 19px; } nav a { margin-left: 16px; font-size: 9px; letter-spacing: 1.8px; } section { padding: 65px 5%; } .hero { padding: 100px 5% 50px; } .hero-logo { width: 80%; margin-bottom: 20px; } .hero .tagline { letter-spacing: 2.5px; font-size: 10px; } .service-block { padding-left: 16px; } #contact { padding: 90px 5%; } .team-grid { gap: 28px; } .films-grid { gap: 18px; } }
+    @media (max-width: 768px) { nav { padding: 16px 5%; } .logo img { height: 19px; } nav a { margin-left: 16px; font-size: 9px; letter-spacing: 1.8px; } section { padding: 65px 5%; } .hero { padding: 100px 5% 50px; } .hero-logo { width: 80%; margin-bottom: 20px; } .hero .tagline { letter-spacing: 2.5px; font-size: 10px; } .service-block { padding-left: 16px; } #contact { padding: 90px 5%; } .team-grid { gap: 28px; } }
   </style>
 </head>
 <body>
@@ -102,8 +99,8 @@
     <div>
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
-      <a href="#films">Films</a>
       <a href="#services">Services</a>
+      <a href="#team">Our Team</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -123,44 +120,6 @@
       <div class="section-title">About Us</div>
       <p class="body-text">4ᵀᴴ GROUND is a film distribution company founded and run by independent film entrepreneurs who are passionate about bridging the gap between independent filmmakers and international audiences. We understand the challenges that independent producers face when trying to access professional distribution channels, and we are committed to building a more open, accessible, and filmmaker-focused pathway into the global streaming landscape.</p>
       <p class="body-text">We are based in Johannesburg, South Africa. To ensure closer collaboration with filmmakers and strengthen our global reach, we also have an acquisitions team based in the United States and United Kingdom. This allows us to stay closely connected to key industry territories, engage directly with international partners, and provide filmmakers with more responsive, hands-on support throughout the distribution process.</p>
-      
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="/team1.jpg" alt="Sen Good" class="team-photo">
-          <div class="team-name">Sen Good</div>
-          <div class="team-role">Managing Director</div>
-          <div class="team-location">Johannesburg, SA</div>
-        </div>
-        <div class="team-member">
-          <img src="/team2.jpg" alt="Ben Armstrong" class="team-photo">
-          <div class="team-name">Ben Armstrong</div>
-          <div class="team-role">Sales Manager</div>
-          <div class="team-location">Johannesburg, SA</div>
-        </div>
-        <div class="team-member">
-          <img src="/team3.jpg" alt="Annie Thomas" class="team-photo">
-          <div class="team-name">Annie Thomas</div>
-          <div class="team-role">Acquisitions Manager</div>
-          <div class="team-location">New York, US</div>
-        </div>
-        <div class="team-member">
-          <img src="/team4.jpg" alt="Franki Wilson" class="team-photo">
-          <div class="team-name">Franki Wilson</div>
-          <div class="team-role">Acquisitions Coordinator</div>
-          <div class="team-location">London, UK</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="films">
-    <div class="section-inner">
-      <div class="section-title">Selected Work</div>
-      <p class="body-text">A glimpse of the stories we've helped bring to global audiences.</p>
-      <div class="films-grid">
-        <img src="/poster1.jpg" alt="Film Title">
-        <img src="/poster2.jpg" alt="Film Title">
-        <img src="/poster3.jpg" alt="Film Title">
-      </div>
     </div>
   </section>
   <section id="services">
@@ -190,6 +149,38 @@
         <div class="service-block">
           <h3>Filmmaker-First Partnership</h3>
           <p>At 4ᵀᴴ GROUND, we believe distribution should be collaborative and filmmaker-focused. We work hand in hand with creators throughout the entire process, offering guidance, communication, and support from onboarding to delivery and release. Our goal is not only to distribute films, but to build lasting partnerships with storytellers and help independent cinema thrive on a global scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="team">
+    <div class="section-inner">
+      <div class="section-title">Our Team</div>
+      <p class="body-text">Meet the people building pathways for independent cinema worldwide.</p>
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="/team1.jpg" alt="Sen Good" class="team-photo">
+          <div class="team-name">Sen Good</div>
+          <div class="team-role">Managing Director</div>
+          <div class="team-location">Johannesburg, SA</div>
+        </div>
+        <div class="team-member">
+          <img src="/team2.jpg" alt="Ben Armstrong" class="team-photo">
+          <div class="team-name">Ben Armstrong</div>
+          <div class="team-role">Sales Manager</div>
+          <div class="team-location">Johannesburg, SA</div>
+        </div>
+        <div class="team-member">
+          <img src="/team3.jpg" alt="Annie Thomas" class="team-photo">
+          <div class="team-name">Annie Thomas</div>
+          <div class="team-role">Acquisitions Manager</div>
+          <div class="team-location">New York, US</div>
+        </div>
+        <div class="team-member">
+          <img src="/team4.jpg" alt="Franki Wilson" class="team-photo">
+          <div class="team-name">Franki Wilson</div>
+          <div class="team-role">Acquisitions Coordinator</div>
+          <div class="team-location">London, UK</div>
         </div>
       </div>
     </div>
