@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4TH GROUND</title>
+  <meta name="description" content="4TH GROUND - Independent film distribution and sales">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      margin-bottom: 30px;
+    }
+    .tagline {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 60px;
+    }
+    .contact {
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: border 0.2s;
+    }
+    .contact a:hover {
+      border-bottom: 1px solid #fff;
+    }
+    @media (max-width: 600px) {
+      .logo { font-size: 1.8rem; letter-spacing: 0.2em; }
+      .tagline { font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="logo">4TH GROUND</h1>
+    <p class="tagline">Independent Film Distribution</p>
+    
+    <!-- Add more sections here as needed -->
+    
+    <div class="contact">
+      <a href="mailto:contact@4thground.com">contact@4thground.com</a>
+    </div>
+  </div>
+</body>
+</html>
