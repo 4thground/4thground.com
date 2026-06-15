@@ -57,15 +57,45 @@
     @keyframes fadeUpTagline {
       to { opacity: 0.55; transform: translateY(0); }
     }
-    section { padding: 90px 5%; border-bottom: 1px solid #080808; position: relative; z-index: 10; background: #000; }
+    section { 
+      padding: 90px 5%; 
+      border-bottom: 1px solid #080808; 
+      position: relative; 
+      z-index: 10; 
+      background: #000;
+      opacity: 0; 
+      transform: translateY(30px); 
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    section.in-view { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+    .hero { 
+      opacity: 1 !important; 
+      transform: none !important; 
+    }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .section-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 35px; opacity: 0.3; font-weight: 500; }
     .large-text { font-size: clamp(24px, 3vw, 40px); line-height: 1.15; font-weight: 300; margin-bottom: 25px; letter-spacing: -1.3px; }
     .body-text { font-size: 15px; line-height: 1.7; opacity: 0.65; max-width: 720px; margin-bottom: 16px; font-weight: 300; }
     .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-top: 45px; }
-    .team-member { text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
-    .team-member.visible { opacity: 1; transform: translateY(0); }
-    .team-photo { width: 100%; aspect-ratio: 3/4; background: #0a0a0a; margin-bottom: 16px; object-fit: cover; filter: grayscale(0.15) contrast(1.05); }
+    .team-member { text-align: left; }
+    .team-photo { 
+      width: 100%; 
+      aspect-ratio: 3/4; 
+      background: #0a0a0a; 
+      margin-bottom: 16px; 
+      object-fit: cover; 
+      filter: grayscale(0.15) contrast(1.05);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .team-photo.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .team-name { font-size: 17px; margin-bottom: 4px; font-weight: 400; letter-spacing: -0.3px; }
     .team-role { font-size: 11px; opacity: 0.45; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 3px; font-weight: 500; }
     .team-location { font-size: 12px; opacity: 0.3; font-weight: 300; }
@@ -204,7 +234,6 @@
     const heroTagline = document.getElementById('heroTagline');
     const navLinks = document.querySelectorAll('nav a');
     const sections = document.querySelectorAll('section');
-    const teamMembers = document.querySelectorAll('.team-member');
     let ticking = false;
     
     function updateOnScroll() {
@@ -236,14 +265,17 @@
       }
     });
     
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+    const fadeElements = document.querySelectorAll('section:not(.hero), .team-photo');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 100);
+          entry.target.classList.add('in-view');
+          fadeObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
-    teamMembers.forEach(member => observer.observe(member));
+    }, { threshold: 0.15 });
+    
+    fadeElements.forEach(el => fadeObserver.observe(el));
   </script>
 </body>
 </html>
