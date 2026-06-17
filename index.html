@@ -1,66 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4TH GROUND</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4TH GROUND</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <nav>
-    <div class="logo"><img src="/logo.png" alt="4TH GROUND"></div>
-    <div>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="team.html">Our Team</a>
-      <a href="contact.html">Contact</a>
+<body class="bg-black text-white">
+    
+    <!-- Nav -->
+    <nav class="absolute top-0 w-full z-20">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <img src="/logo.png" alt="4TH GROUND" class="h-8">
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="index.html" class="text-white">Home</a>
+                <a href="about.html" class="text-zinc-300 hover:text-white">About</a>
+                <a href="services.html" class="text-zinc-300 hover:text-white">Services</a>
+                <a href="team.html" class="text-zinc-300 hover:text-white">Team</a>
+                <a href="contact.html" class="text-zinc-300 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero - Apple TV Style -->
+    <div class="relative h-screen w-full overflow-hidden">
+        <img src="https://mzone.b-cdn.net/vlcsnap-2026-06-01-04h48m45s377.png" 
+             alt="4th Ground" 
+             class="absolute inset-0 w-full h-full object-cover">
+        
+        <!-- Gradients for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
+        
+        <!-- Hero Text Overlay -->
+        <div class="absolute inset-0 flex items-center">
+            <div class="w-full max-w-7xl mx-auto px-6">
+                <div class="max-w-3xl">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
+                        WE DON'T JUST DISTRIBUTE FILMS • WE<br>
+                        CONNECT THEM WITH THE RIGHT AUDIENCES •<br>
+                        WE MAXIMIZE THEIR GLOBAL REACH
+                    </h1>
+                    <p class="text-lg md:text-xl text-zinc-200 leading-relaxed">
+                        At 4TH GROUND, we are passionate about bringing independent films to audiences around the world. We work closely with filmmakers, producers, and production companies to help their projects reach the global market through strategic digital distribution.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
-  <section class="hero">
-    <div class="hero-content">
-      <img src="/logo.png" alt="4TH GROUND" class="hero-logo">
-      <p class="tagline">WE DON'T JUST DISTRIBUTE FILMS • WE CONNECT THEM WITH THE RIGHT AUDIENCES • WE MAXIMIZE THEIR GLOBAL REACH</p>
-      <div class="hero-text-wrap">
-        <p class="body-text">At 4ᵀᴴ GROUND, we are passionate about bringing independent films to audiences around the world. We work closely with filmmakers, producers, and production companies to help their projects reach the global market through strategic digital distribution.</p>
-        <p class="body-text">Our mission is to empower independent filmmakers by creating opportunities for their films to be seen from medium-sized to prominent streaming platforms worldwide. We believe great cinema deserves visibility, regardless of budget or origin.</p>
-        <p class="body-text">With a filmmaker-first approach, we focus on building meaningful partnerships, supporting the creatives, and helping quality films expand beyond borders. From emerging filmmakers to established production companies, we are committed to delivering content to platforms that connect stories with audiences everywhere.</p>
-  </nav>
-  <section class="page-content">
-    <div class="section-inner">
-      <div class="section-title">Our Services</div>
-      <div class="services-intro">
-        <p class="large-text">At 4ᵀᴴ GROUND, we provide global film distribution solutions tailored for independent filmmakers and production companies looking to expand their reach across international markets.</p>
-        <p class="body-text">Our mission is to help powerful stories connect with audiences worldwide through strategic digital distribution and professional delivery services.</p>
-      </div>
-      <div class="services-list">
-        <div class="service-block">
-          <h3>Distribution Channels</h3>
-          <p>We work with a variety of distribution channels, including Subscription Video On Demand (SVOD), Advertising-Based Video On Demand (AVOD), Transactional Video On Demand (TVOD), FAST Channels, mobile streaming services, and inflight entertainment platforms. From medium-sized streaming services to prominent global platforms, we help position films where they have the best opportunity to grow and reach the right audiences.</p>
+
+    <!-- Main Content - Keep all your existing text -->
+    <section class="max-w-5xl mx-auto px-6 py-20">
+        <div class="space-y-16">
+            
+            <!-- Mission -->
+            <div>
+                <p class="text-xl text-zinc-300 leading-relaxed">
+                    Our mission is to empower independent filmmakers by creating opportunities for their films to be seen from medium-sized to prominent streaming platforms worldwide. We believe great cinema deserves visibility, regardless of budget or origin.
+                </p>
+                <p class="text-xl text-zinc-300 leading-relaxed mt-6">
+                    With a filmmaker-first approach, we focus on building meaningful partnerships, supporting the creatives, and helping quality films expand beyond borders. From emerging filmmakers to established production companies, we are committed to delivering content to platforms that connect stories with audiences everywhere.
+                </p>
+            </div>
+
+            <!-- Services -->
+            <div class="border-t border-zinc-800 pt-16">
+                <h2 class="text-4xl font-bold mb-8">Our Services</h2>
+                
+                <div class="space-y-8 text-lg text-zinc-300 leading-relaxed">
+                    <p>At 4TH GROUND, we provide global film distribution solutions tailored for independent filmmakers and production companies looking to expand their reach across international markets. Our mission is to help powerful stories connect with audiences worldwide through strategic digital distribution and professional delivery services.</p>
+                    
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Distribution Channels</h3>
+                        <p>We work with a variety of distribution channels, including Subscription Video On Demand (SVOD), Advertising-Based Video On Demand (AVOD), Transactional Video On Demand (TVOD), FAST Channels, mobile streaming services, and inflight entertainment platforms. From medium-sized streaming services to prominent global platforms, we help position films where they have the best opportunity to grow and reach the right audiences.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Technical Delivery</h3>
+                        <p>Our team handles the technical preparation and delivery process required by modern streaming platforms. This includes film encoding, quality control, subtitle/closed captions integration, metadata preparation, and delivery packaging. We ensure that every project meets professional industry standards and platform specifications before distribution.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Marketing & Strategy</h3>
+                        <p>Beyond delivery, we also cover marketing and come up with promotional strategies designed to increase visibility and audience engagement. We assist with positioning films for the market, helping filmmakers identify the right platforms, audiences, and release opportunities for their projects. From trailers and artwork to promotional planning, we aim to strengthen the presentation and discoverability of every film we represent.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Inflight Entertainment</h3>
+                        <p>We also help filmmakers explore inflight entertainment opportunities, allowing films to reach international travelers through airline entertainment systems. This creates additional exposure and expands audience access beyond traditional streaming environments.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-3">Filmmaker-First Partnership</h3>
+                        <p>At 4TH GROUND, we believe distribution should be collaborative and filmmaker-focused. We work hand in hand with creators throughout the entire process, offering guidance, communication, and support from onboarding to delivery and release. Our goal is not only to distribute films, but to build lasting partnerships with storytellers and help independent cinema thrive on a global scale.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="service-block">
-          <h3>Technical Delivery</h3>
-          <p>Our team handles the technical preparation and delivery process required by modern streaming platforms. This includes film encoding, quality control, subtitle/closed captions integration, metadata preparation, and delivery packaging. We ensure that every project meets professional industry standards and platform specifications before distribution.</p>
-        </div>
-        <div class="service-block">
-          <h3>Marketing & Strategy</h3>
-          <p>Beyond delivery, we also cover marketing and come up with promotional strategies designed to increase visibility and audience engagement. We assist with positioning films for the market, helping filmmakers identify the right platforms, audiences, and release opportunities for their projects. From trailers and artwork to promotional planning, we aim to strengthen the presentation and discoverability of every film we represent.</p>
-        </div>
-        <div class="service-block">
-          <h3>Inflight Entertainment</h3>
-          <p>We also help filmmakers explore inflight entertainment opportunities, allowing films to reach international travellers through airline entertainment systems. This creates additional exposure and expands audience access beyond traditional streaming environments.</p>
-        </div>
-        <div class="service-block">
-          <h3>Filmmaker-First Partnership</h3>
-          <p>At 4ᵀᴴ GROUND, we believe distribution should be collaborative and filmmaker-focused. We work hand in hand with creators throughout the entire process, offering guidance, communication, and support from onboarding to delivery and release. Our goal is not only to distribute films, but to build lasting partnerships with storytellers and help independent cinema thrive on a global scale.</p>
-      </div>
-    </div>
-  </section>
-  <footer>© 2026  4ᵀᴴ GROUND.  All Rights Reserved.</footer>
-  <script src="script.js"></script>
+    </section>
+
+    <footer class="border-t border-zinc-800 py-8 text-center text-zinc-500 text-sm">
+        <p>© 2024 4TH GROUND. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
