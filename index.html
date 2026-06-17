@@ -11,13 +11,13 @@
 </head>
 <body class="bg-black text-white">
     
-    <!-- Nav -->
+    <!-- Nav - Now shows on mobile too -->
     <nav class="absolute top-0 w-full z-20">
         <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3">
                 <img src="/logo.png" alt="4TH GROUND" class="h-8">
             </a>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
+            <div class="flex gap-4 md:gap-8 text-xs md:text-sm font-medium">
                 <a href="index.html" class="text-white">Home</a>
                 <a href="about.html" class="text-zinc-300 hover:text-white">About</a>
                 <a href="services.html" class="text-zinc-300 hover:text-white">Services</a>
@@ -33,13 +33,14 @@
              alt="4th Ground" 
              class="absolute inset-0 w-full h-full object-cover">
         
-        <!-- Lighter gradient so you see the faces -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/90"></div>
+        <!-- Darker gradient that fades at bottom - like you loved -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
         
-        <!-- Tagline - positioned high where you marked -->
-        <div class="absolute top-0 left-0 w-full pt-32 md:pt-40 lg:pt-48">
+        <!-- Tagline - High up -->
+        <div class="absolute top-0 left-0 w-full pt-24 md:pt-32 lg:pt-40">
             <div class="max-w-7xl mx-auto px-6">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight max-w-4xl">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight max-w-4xl">
                     WE DON'T JUST DISTRIBUTE FILMS • WE<br>
                     CONNECT THEM WITH THE RIGHT AUDIENCES •<br>
                     WE MAXIMIZE THEIR GLOBAL REACH
@@ -47,17 +48,17 @@
             </div>
         </div>
 
-        <!-- Paragraph - pushed to bottom -->
-        <div class="absolute bottom-0 left-0 w-full pb-16 md:pb-24">
+        <!-- Paragraph - Pushed way down to where you marked -->
+        <div class="absolute bottom-0 left-0 w-full pb-8 md:pb-12">
             <div class="max-w-7xl mx-auto px-6">
-                <p class="text-lg md:text-xl text-zinc-200 leading-relaxed max-w-3xl">
+                <p class="text-base md:text-lg text-zinc-200 leading-relaxed max-w-3xl">
                     At 4TH GROUND, we are passionate about bringing independent films to audiences around the world. We work closely with filmmakers, producers, and production companies to help their projects reach the global market through strategic digital distribution.
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- Rest of content -->
+    <!-- Content below hero -->
     <section class="max-w-5xl mx-auto px-6 py-20">
         <div class="space-y-6 text-xl text-zinc-300 leading-relaxed">
             <p>Our mission is to empower independent filmmakers by creating opportunities for their films to be seen from medium-sized to prominent streaming platforms worldwide. We believe great cinema deserves visibility, regardless of budget or origin.</p>
