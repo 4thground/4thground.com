@@ -3,91 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="4TH GROUND is a worldwide film distribution company. Filmmaker-focused, creativity-first. We bring untold stories to global audiences.4th Ground was founded by Sen Good.">
+<meta name="description" content="4TH GROUND is a worldwide film distribution company. Filmmaker-focused, creativity-first. We bring untold stories to global audiences.4thGround founder is Sen Good.">
 <link rel="canonical" href="https://4thground.com/">
 <meta name="robots" content="index, follow">
-    <title>Our Team - 4TH GROUND</title>
+    <title>4TH GROUND</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <script src="https://cdn.tailwindcss.com"></script>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "4TH GROUND",
+    "url": "https://4thground.com",
+    "logo": "https://4thground.com/logo.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Sen Good"
+    },
+    "description": "We don't just distribute films. We connect them with the right audiences. We maximize their global reach."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sen Good",
+    "jobTitle": "Founder",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "4TH GROUND",
+      "url": "https://4thground.com"
+    },
+    "sameAs": [
+      "https://www.imdb.com/name/nm13264578/"
+    ]
+  }
+]
+</script>
 </head>
 <body class="bg-black text-white">
     
+    <!-- Nav -->
     <nav class="absolute top-0 w-full z-20 bg-gradient-to-b from-black/80 to-transparent">
         <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
             <a href="/" class="flex items-center gap-3">
                 <img src="/logo.png" alt="4TH GROUND" class="h-8">
             </a>
             <div class="flex gap-4 md:gap-8 text-xs md:text-sm font-medium">
-                <a href="/" class="text-zinc-300 hover:text-white">Home</a>
+                <a href="/" class="text-white">Home</a>
                 <a href="/about/" class="text-zinc-300 hover:text-white">About</a>
                 <a href="/services/" class="text-zinc-300 hover:text-white">Services</a>
-                <a href="/team/" class="text-white">Team</a>
+                <a href="/team/" class="text-zinc-300 hover:text-white">Team</a>
                 <a href="/contact/" class="text-zinc-300 hover:text-white">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Fixed: h-80 md:h-96 + added title -->
-    <div class="relative h-80 md:h-96 w-full overflow-hidden pt-20">
-        <img src="/logo.png" 
+    <!-- Hero -->
+    <div class="relative h-screen w-full overflow-hidden">
+        <img src="/photo5.png" 
              alt="4th Ground" 
              class="absolute inset-0 w-full h-full object-cover">
+        
+        <!-- Dark gradients - heavy at bottom -->
         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+        
+        <!-- Hero Content - Apple TV layout -->
         <div class="absolute inset-0 flex items-end">
-            <div class="w-full max-w-7xl mx-auto px-6 pb-8 md:pb-10">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight">Our Team</h1>
+            <div class="w-full max-w-7xl mx-auto px-6 pb-12 md:pb-16">
+                <div class="max-w-2xl">
+                    <!-- Tag -->
+                    <div class="inline-block bg-zinc-800/80 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                        Film Distribution
+                    </div>
+                    
+                    <!-- Title -->
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-none">
+                        4TH GROUND
+                    </h1>
+                    
+                    <!-- Meta -->
+                    <div class="flex items-center gap-2 text-sm text-zinc-300 mb-4">
+                        <span>Global Reach</span>
+                        <span>·</span>
+                        <span>Filmmaker Focused</span>
+                        <span class="border border-zinc-500 px-1.5 py-0.5 text-xs">EST. 2026</span>
+                    </div>
+                    
+                    <!-- Tagline -->
+                    <p class="text-lg md:text-xl text-zinc-200 mb-8 leading-relaxed">
+                        We don't just distribute films. We connect them with the right audiences. We maximize their global reach.
+                    </p>
+                    
+                    <!-- Buttons - Your pages -->
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="/services/" class="bg-white text-black font-semibold px-8 py-3 rounded-md hover:bg-zinc-200 transition flex items-center gap-2">
+        
+                            Our Services
+                        </a>
+                        <a href="/about/" class="bg-zinc-800/80 backdrop-blur text-white font-semibold px-8 py-3 rounded-md hover:bg-zinc-700 transition">
+                            About Us
+                        </a>
+                        <a href="/contact/" class="bg-zinc-800/80 backdrop-blur text-white font-semibold px-8 py-3 rounded-md hover:bg-zinc-700 transition">
+                            Contact
+                        </a>
+                        <a href="/team/" class="w-11 h-11 rounded-full bg-zinc-800/80 backdrop-blur hover:bg-zinc-700 transition flex items-center justify-center">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <section class="max-w-7xl mx-auto px-6 py-8 md:py-10">
-        <p class="text-lg md:text-xl text-zinc-300 mb-10">Meet the team behind 4TH GROUND.</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="group">
-                <div class="aspect-square overflow-hidden rounded-lg mb-4 bg-zinc-900">
-                    <img src="/team1.jpg" alt="Sen Good" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+    <!-- Content Section - With icon cards -->
+    <section class="max-w-5xl mx-auto px-6 py-10 md:py-12">
+        <div class="space-y-6">
+            
+            <!-- Passion for Independent Film -->
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6 md:p-8 hover:border-zinc-700 transition">
+                <div class="flex items-start gap-5">
+                    <div class="bg-white/10 p-3 rounded-md flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-lg md:text-xl text-zinc-300 leading-relaxed">At 4TH GROUND, we are passionate about bringing independent films to audiences around the world. We work closely with filmmakers, producers, and production companies to help their projects reach the global market through strategic digital distribution.</p>
+                    </div>
                 </div>
-                <div class="text-xl font-semibold text-white">Sen Good</div>
-                <div class="text-zinc-400">Managing Director</div>
-                <div class="text-sm text-zinc-500">Johannesburg, SA</div>
             </div>
 
-            <div class="group">
-                <div class="aspect-square overflow-hidden rounded-lg mb-4 bg-zinc-900">
-                    <img src="/team2.jpg" alt="Ben Armstrong" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <!-- Mission -->
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6 md:p-8 hover:border-zinc-700 transition">
+                <div class="flex items-start gap-5">
+                    <div class="bg-white/10 p-3 rounded-md flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-lg md:text-xl text-zinc-300 leading-relaxed">Our mission is to empower independent filmmakers by creating opportunities for their films to be seen from medium-sized to prominent streaming platforms worldwide. We believe great cinema deserves visibility, regardless of budget or origin.</p>
+                    </div>
                 </div>
-                <div class="text-xl font-semibold text-white">Ben Armstrong</div>
-                <div class="text-zinc-400">Sales Manager</div>
-                <div class="text-sm text-zinc-500">Johannesburg, SA</div>
             </div>
 
-            <div class="group">
-                <div class="aspect-square overflow-hidden rounded-lg mb-4 bg-zinc-900">
-                    <img src="/team3.jpg" alt="Annie Thomas" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <!-- Filmmaker-First Approach -->
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6 md:p-8 hover:border-zinc-700 transition">
+                <div class="flex items-start gap-5">
+                    <div class="bg-white/10 p-3 rounded-md flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-lg md:text-xl text-zinc-300 leading-relaxed">With a filmmaker-first approach, we focus on building meaningful partnerships, supporting the creatives, and helping quality films expand beyond.</p>
+                    </div>
                 </div>
-                <div class="text-xl font-semibold text-white">Annie Thomas</div>
-                <div class="text-zinc-400">Acquisitions Manager</div>
-                <div class="text-sm text-zinc-500">New York, US</div>
             </div>
 
-            <div class="group">
-                <div class="aspect-square overflow-hidden rounded-lg mb-4 bg-zinc-900">
-                    <img src="/team4.jpg" alt="Franki Wilson" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <!-- Pre-Sale Movie Store -->
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-lg p-6 md:p-8 hover:border-zinc-700 transition">
+                <div class="flex items-start gap-5">
+                    <div class="bg-white/10 p-3 rounded-md flex-shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-white mb-3">Pre-Sale Movie Store</h3>
+                        <p class="text-lg md:text-xl text-zinc-300 leading-relaxed">We run our own TVOD platform where filmmakers can start earning while waiting for their films to be picked up by major platforms. The beautiful thing is that filmmakers suggest their own rental and buy prices. No waiting, no gatekeepers. You set the value of your work and connect directly with audiences ready to watch.</p>
+                    </div>
                 </div>
-                <div class="text-xl font-semibold text-white">Franki Wilson</div>
-                <div class="text-zinc-400">Acquisitions Coordinator</div>
-                <div class="text-sm text-zinc-500">London, UK</div>
             </div>
+
         </div>
     </section>
 
-    <footer class="border-t border-zinc-800 py-8 text-center text-zinc-500 text-sm mt-12">
-        <p>© 2026 4TH GROUND. All Rights Reserved.</p>
-    </footer>
+<footer class="border-t border-zinc-800 py-8 text-center text-zinc-500 text-sm">
+    <p>© 2026 4TH GROUND. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
