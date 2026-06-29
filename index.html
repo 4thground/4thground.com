@@ -43,15 +43,15 @@
 </script>
 </head>
 <body class="bg-black text-white">
-    <!-- 4THGROUND GATE V12 -->
+    <!-- 4THGROUND GATEWAY V13 - FULL CODE -->
 <style>
   #g4-gateway {
     position: fixed; inset: 0; z-index: 99999; 
-    background: #000; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    background: #000; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif;
     color: #fff; overflow: hidden;
   }
   
-  /* SLIDESHOW */
+  /* 5 ARTWORK SLIDESHOW */
   #g4-slides { position: absolute; inset: 0; z-index: 0; }
   #g4-slides img {
     position: absolute; inset: 0; width: 100%; height: 100%;
@@ -59,13 +59,13 @@
     filter: brightness(0.4) blur(1px);
   }
   #g4-slides img.active { opacity: 1; }
-  #g4-slides::after {
+  #g4-slides::after { /* Dark gradient like your screenshot */
     content: ""; position: absolute; inset: 0;
     background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 80%, #000 100%);
     z-index: 1;
   }
 
-  /* CONTENT */
+  /* CENTER CONTENT */
   #g4-gateway.wrap {
     position: relative; z-index: 2; height: 100%;
     padding: 0 20px; display: flex; align-items: center; justify-content: center;
@@ -74,12 +74,12 @@
   #g4-gateway.box { max-width: 500px; width: 100%; }
   
   #g4-gateway.brand { font-size: 14px; font-weight: 600; letter-spacing: 0.5px; color: #aaa; margin-bottom: 30px; }
-  #g4-gateway h1 { font-size: 32px; font-weight: 800; margin: 0 0 12px; }
+  #g4-gateway h1 { font-size: 32px; font-weight: 800; margin: 0 0 12px; line-height: 1.1; }
   #g4-gateway.meta { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 0 0 18px; font-size: 14px; color: #aaa; }
   #g4-gateway.chip { border: 1px solid #444; border-radius: 4px; padding: 2px 6px; font-size: 12px; }
   #g4-gateway p { font-size: 15px; color: #ccc; line-height: 1.5; margin: 0 0 24px; }
   
-  /* BUTTONS HOVER */
+  /* BUTTONS + HOVER */
   #g4-gateway.btn {
     width: 100%; max-width: 280px; padding: 16px 20px; font-size: 17px;
     font-weight: 700; border-radius: 24px; border: none; cursor: pointer;
@@ -89,12 +89,12 @@
   #g4-gateway.btn-main:hover { transform: scale(1.03); background: #e5e5e5; }
   #g4-gateway.note { font-size: 13px; color: #888; margin-bottom: 18px; }
   #g4-gateway.btn-sub { 
-    background: transparent; color: rgba(255,255,255,0.5);
+    background: transparent; color: rgba(255,255,255,0.5); /* FAINT */
     border: 1px solid rgba(255,255,255,0.15); font-weight: 600;
   }
   #g4-gateway.btn-sub:hover { background: rgba(255,255,255,0.05); color: #fff; }
   
-  /* LAUNCHING SOON */
+  /* LAUNCHING SOON MODAL */
   #g4-soon {
     position: fixed; inset: 0; z-index: 3; background: rgba(0,0,0,0.95);
     display: none; align-items: center; justify-content: center;
@@ -108,11 +108,12 @@
     border-radius: 24px; border: none; font-weight: 700; cursor: pointer;
   }
   
-  #g4-gateway.hidden { display: none; }
-  body.locked { overflow: hidden; }
+  #g4-gateway.hidden { display: none!important; }
+  body.locked { overflow: hidden!important; }
 </style>
 
 <div id="g4-gateway">
+  <!-- 1. PUT YOUR 5 POSTERS HERE -->
   <div id="g4-slides">
     <img src="posters/film1.png" alt="" class="active" onerror="this.remove()">
     <img src="posters/film2.png" alt="" onerror="this.remove()">
@@ -121,6 +122,7 @@
     <img src="posters/film5.png" alt="" onerror="this.remove()">
   </div>
   
+  <!-- 2. MAIN CARD -->
   <div class="wrap">
     <div class="box">
       <div class="brand">4thGROUND</div>
@@ -137,6 +139,7 @@
     </div>
   </div>
   
+  <!-- 3. LAUNCHING SOON OVERLAY -->
   <div id="g4-soon">
     <div>
       <h2>Launching Soon</h2>
@@ -147,10 +150,11 @@
 </div>
 
 <script>
+  // LOCK SCROLL + TRAP BACK BUTTON
   document.body.classList.add('locked');
   history.replaceState(null, '', '#gate');
 
-  // 1. 5 ARTWORK SLIDESHOW - 3s
+  // SLIDESHOW: 5 IMAGES, 3 SECONDS
   const slides = document.querySelectorAll('#g4-slides img');
   let current = 0;
   if(slides.length > 1) {
@@ -161,31 +165,31 @@
     }, 3000);
   }
 
-  // 2. WHITELIST CHECK - ONLY THIS URL WORKS
-  const WATCH_URL = "https://watch.4thground.com"; // <-- Change this to test
+  // WHITELIST: ONLY THIS EXACT URL WORKS
+  const WATCH_URL = "https://watch.4thground.com"; // <-- CHANGE THIS TO TEST
   const ALLOWED_URL = "https://watch.4thground.com"; 
 
   document.getElementById('g4-watch').onclick = function() {
     if(WATCH_URL === ALLOWED_URL) {
       window.location.href = WATCH_URL; // GO TO STORE
     } else {
-      document.getElementById('g4-soon').classList.add('show'); // SHOW LAUNCHING SOON
+      document.getElementById('g4-soon').classList.add('show'); // SHOW "LAUNCHING SOON"
     }
   };
 
-  // 3. BACK BUTTON
+  // BACK BUTTON ON "LAUNCHING SOON"
   document.getElementById('g4-back').onclick = function() {
     document.getElementById('g4-soon').classList.remove('show');
   };
 
-  // 4. FOR FILMMAKERS
+  // FOR FILMMAKERS BUTTON = ENTER SITE
   document.getElementById('g4-enter').onclick = function() {
     document.getElementById('g4-gateway').classList.add('hidden');
     document.body.classList.remove('locked');
     history.pushState(null, '', '#site');
   };
 
-  // 5. BACK BUTTON TRAP
+  // TRAP ANDROID/ IOS BACK BUTTON
   window.onpopstate = function() {
     document.getElementById('g4-gateway').classList.remove('hidden');
     document.body.classList.add('locked');
