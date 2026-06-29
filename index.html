@@ -48,6 +48,53 @@
 <body class="bg-black text-white">
 <!-- 4THGROUND GATEWAY V13 CORRECT -->
 <style>
+    .g4-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  font-family: inherit;
+}
+
+.menu-btn {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: rgba(0,0,0,0.95);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  min-width: 160px;
+  overflow: hidden;
+}
+
+.menu-dropdown a {
+  display: block;
+  padding: 12px 14px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.menu-dropdown a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.menu-dropdown a:last-child {
+  border-bottom: none;
+}
+    
   #g4-gateway {
     position: fixed;
     inset: 0;
