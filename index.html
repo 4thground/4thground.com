@@ -42,16 +42,15 @@
 ]
 </script>
 </head>
-<body class="bg-black text-<!-- 4THGROUND GATEWAY - APPLE TV STYLE | FULL CODE -->
-<!-- 4THGROUND GATEWAY - SAFE VERSION -->
+<body class="bg-black text-<!-- 4THGROUND GATEWAY - APPLE TV STYLE | FULL 
+    <!-- 4THGROUND = APPLE TV STYLE -->
 <style>
   #g4-gateway {
     position: fixed; inset: 0; z-index: 9999;
     background: #000;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif;
     color: #fff; overflow: hidden;
   }
-  
   #g4-gateway.g4-bg {
     position: absolute; inset: -15% -10%; z-index: 0;
     perspective: 1200px;
@@ -67,23 +66,22 @@
     grid-auto-rows: 38%;
     gap: 18px; padding: 2vh 3vw;
     transform: rotateX(18deg) rotateY(-10deg) scale(1.15);
-    transform-style: preserve-3d;
   }
   
-  /* KEY FIX: Hide broken images */
+  /* APPLE TV CARD STYLE */
   #g4-gateway.g4-posters img {
     width: 100%; height: 100%;
-    object-fit: cover; 
-    border-radius: 14px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.1);
+    object-fit: cover; /* 16:9 without stretch */
+    border-radius: 14px; /* Rounded */
+    box-shadow: 
+      0 12px 28px rgba(0,0,0,0.6), /* Drop shadow */
+      inset 0 1px 0 rgba(255,255,255,0.1); /* Top shine */
     opacity: 0.8;
-    visibility: hidden; /* Hide by default */
+    visibility: hidden; 
   }
-  #g4-gateway.g4-posters img[src]:not([src=""]) {
-    visibility: visible; /* Only show if image loads */
-  }
+  #g4-gateway.g4-posters img[src]:not([src=""]) { visibility: visible; }
   
-  /* 2 HERO POSTERS */
+  /* 2 FRONT HEROES LIKE WIDOW'S BAY + LOVE ISLAND */
   #g4-gateway.g4-posters img:nth-child(2),
   #g4-gateway.g4-posters img:nth-child(5) {
     transform: scale(1.12) translateZ(40px);
@@ -99,11 +97,10 @@
     position: relative; z-index: 4; background: rgba(20,20,20,0.9);
     backdrop-filter: blur(20px); border-radius: 16px; padding: 32px 28px 28px;
     max-width: 420px; margin: auto; text-align: center; top: 50%; transform: translateY(-50%);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
   }
   #g4-gateway.g4-brand { font-size: 24px; font-weight: 700; letter-spacing: 1px; margin-bottom: 16px; }
-  #g4-gateway h1 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
-  #g4-gateway p { font-size: 15px; color: #a1a1a6; margin-bottom: 24px; }
+  #g4-gateway h1 { font-size: 20px; font-weight: 600; margin: 0 0 8px; }
+  #g4-gateway p { font-size: 15px; color: #a1a1a6; margin: 0 0 24px; }
   #g4-gateway.g4-btn {
     width: 100%; padding: 14px 20px; font-size: 17px; font-weight: 600;
     border-radius: 12px; border: none; cursor: pointer;
@@ -111,21 +108,21 @@
   #g4-gateway.g4-btn.primary { background: #fff; color: #000; margin-bottom: 6px; }
   #g4-gateway.g4-note { font-size: 13px; color: #a1a1a6; margin-bottom: 16px; }
   #g4-gateway.g4-btn.secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); }
-  #g4-gateway.hidden { display: none; }
+  #g4-gateway.hidden { display: none!important; }
   body.g4-locked { overflow: hidden; }
 </style>
 
 <div id="g4-gateway">
   <div class="g4-bg">
     <div class="g4-posters">
-      <img src="posters/film1.png" alt="" onerror="this.style.display='none'">
-      <img src="posters/film2.png" alt="" onerror="this.style.display='none'">
-      <img src="posters/film3.png" alt="" onerror="this.style.display='none'">
-      <img src="posters/film4.png" alt="" onerror="this.style.display='none'">
-      <img src="posters/film5.png" alt="" onerror="this.style.display='none'">
-      <img src="posters/film6.png" alt="" onerror="this.style.display='none'">
-      <img src="posters/film1.png" alt="" onerror="this.style.display='none'">
-      <img src="posters/film3.png" alt="" onerror="this.style.display='none'">
+      <img src="posters/film1.png" alt="" onerror="this.remove()">
+      <img src="posters/film2.png" alt="" onerror="this.remove()"> <!-- HERO 1 -->
+      <img src="posters/film3.png" alt="" onerror="this.remove()">
+      <img src="posters/film4.png" alt="" onerror="this.remove()">
+      <img src="posters/film5.png" alt="" onerror="this.remove()"> <!-- HERO 2 -->
+      <img src="posters/film6.png" alt="" onerror="this.remove()">
+      <img src="posters/film1.png" alt="" onerror="this.remove()">
+      <img src="posters/film3.png" alt="" onerror="this.remove()">
     </div>
   </div>
   
@@ -134,29 +131,24 @@
     <h1>Independent Cinema. One Store.</h1>
     <p>Rent or buy award-winning films instantly. No membership needed.</p>
     
-    <a href="https://watch.4thground.com" style="text-decoration:none;">
-      <button class="g4-btn primary">Watch Movies</button>
-    </a>
+    <a href="https://watch.4thground.com"><button class="g4-btn primary">Watch Movies</button></a>
     <div class="g4-note">No subscription required</div>
-    
     <button id="g4-enter" class="g4-btn secondary">For Filmmakers</button>
   </div>
 </div>
 
 <script>
-  const gateway = document.getElementById('g4-gateway');
-  gateway.classList.remove('hidden');
+  const g = document.getElementById('g4-gateway');
+  g.classList.remove('hidden');
   document.body.classList.add('g4-locked');
   history.replaceState({page: 'gateway'}, '', '#gateway');
-
   document.getElementById('g4-enter').onclick = () => {
-    gateway.classList.add('hidden');
+    g.classList.add('hidden');
     document.body.classList.remove('g4-locked');
     history.pushState({page: 'filmmakers'}, '');
   };
-
   window.addEventListener('popstate', () => {
-    gateway.classList.remove('hidden');
+    g.classList.remove('hidden');
     document.body.classList.add('g4-locked');
     history.pushState({page: 'gateway'}, '', '#gateway');
   });
