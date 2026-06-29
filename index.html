@@ -341,6 +341,20 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('locked');
   history.replaceState(null, '', '#gate');
 
+    const menuBtn = document.querySelector('.menu-btn');
+const dropdown = document.querySelector('.menu-dropdown');
+
+menuBtn.onclick = function () {
+  dropdown.style.display =
+    dropdown.style.display === "block" ? "none" : "block";
+};
+
+document.addEventListener('click', function (e) {
+  if (!document.querySelector('.g4-menu').contains(e.target)) {
+    dropdown.style.display = "none";
+  }
+});
+
   const slides = [...document.querySelectorAll("#g4-slides img")];
 
   let current = 0;
