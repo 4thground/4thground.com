@@ -43,32 +43,32 @@
 </script>
 </head>
 <body class="bg-black text-<!-- 4THGROUND GATEWAY - APPLE TV STYLE | FULL 
-    <!-- 4THGROUND GATEWAY V4 - NO IMAGES, NO BREAKAGE -->
+    <!-- 4THGROUND GATEWAY V5 - WILL SHOW FOR SURE -->
 <style>
   #g4-gateway {
-    position: fixed !important; 
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100vw; height: 100vh;
-    z-index: 999; /* Higher than everything */
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    z-index: 999; /* Highest possible */
     background: #000;
-    font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-    color: #fff; 
+    margin: 0; padding: 0;
     display: flex; align-items: center; justify-content: center;
   }
-  #g4-gateway.g4-card {
-    background: rgba(20,20,20,0.95);
-    backdrop-filter: blur(20px); 
+  #g4-gateway .g4-card {
+    background: #ffffff; /* WHITE CARD SO YOU SEE IT */
+    color: #000;
     border-radius: 16px; 
     padding: 32px 28px;
-    max-width: 420px; 
+    width: 85%; max-width: 400px; 
     text-align: center;
+    font-family: Arial, sans-serif;
   }
-  #g4-gateway h1 { font-size: 20px; font-weight: 600; margin: 0 0 8px; }
-  #g4-gateway p { font-size: 15px; color: #a1a1a6; margin: 0 0 24px; }
+  #g4-gateway h1 { font-size: 22px; margin: 0 0 10px; }
+  #g4-gateway p { font-size: 15px; color: #444; margin: 0 0 20px; }
   #g4-gateway button {
-    width: 100%; padding: 14px 20px; font-size: 17px; font-weight: 600;
-    border-radius: 12px; border: none; cursor: pointer;
-    background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2);
+    width: 100%; padding: 14px; font-size: 17px; font-weight: bold;
+    border-radius: 12px; border: 1px solid #000; 
+    background: #000; color: #fff; cursor: pointer;
   }
   #g4-gateway.hidden { display: none !important; }
   body.g4-locked { overflow: hidden !important; }
@@ -83,28 +83,20 @@
 </div>
 
 <script>
-(function() {
-  const gateway = document.getElementById('g4-gateway');
-  
-  // Force show on load
-  gateway.classList.remove('hidden');
   document.body.classList.add('g4-locked');
-  history.replaceState({g4: 'gateway'}, '', '#gateway');
-
-  // Hide when clicked
+  history.replaceState({}, '', '#gateway');
+  
   document.getElementById('g4-enter').onclick = function() {
-    gateway.classList.add('hidden');
+    document.getElementById('g4-gateway').classList.add('hidden');
     document.body.classList.remove('g4-locked');
-    history.pushState({g4: 'site'}, '');
+    history.pushState({}, '', '#site');
   };
 
-  // Show again on Back
-  window.addEventListener('popstate', function() {
-    gateway.classList.remove('hidden');
+  window.onpopstate = function() {
+    document.getElementById('g4-gateway').classList.remove('hidden');
     document.body.classList.add('g4-locked');
-    history.pushState({g4: 'gateway'}, '', '#gateway');
-  });
-})();
+    history.pushState({}, '', '#gateway');
+  };
 </script>
     <!-- Nav -->
     <nav class="absolute top-0 w-full z-20 bg-gradient-to-b from-black/80 to-transparent">
