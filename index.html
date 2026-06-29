@@ -43,73 +43,70 @@
 </script>
 </head>
 <body class="bg-black text-white">
-    <!-- 4THGROUND SIMPLE PHOTO GATE -->
+    <!-- 4THGROUND STORE-STYLE GATE -->
 <style>
   #g4-gateway {
     position: fixed; inset: 0;
-    z-index: 99999; background: #000;
-    font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-    color: #fff; overflow: hidden;
+    z-index: 99999; 
+    background: #000;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif;
+    color: #fff;
+    padding: 0 20px;
     display: flex; align-items: center; justify-content: center;
-  }
-  
-  /* FAINT DIAGONAL GRID BACKGROUND */
-  #g4-gateway::before {
-    content: "";
-    position: absolute; inset: 0;
-    background: 
-      linear-gradient(135deg, rgba(255,255,255,0.03) 25%, transparent 25%) -20px 0,
-      linear-gradient(225deg, rgba(255,255,255,0.03) 25%, transparent 25%) -20px 0,
-      linear-gradient(315deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-      linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%);
-    background-size: 40px 40px;
-    z-index: 0;
-  }
-  
-  /* PHOTO GRID */
-  #g4-gateway.photos {
-    position: absolute; inset: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 12px;
-    padding: 12px;
-    filter: blur(8px) brightness(0.4);
-    z-index: 1;
-  }
-  #g4-gateway.photos img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    opacity: 0; /* hide until loaded */
-  }
-  #g4-gateway.photos img[src]:not([src=""]) { opacity: 1; }
-  
-  /* GLASS CARD */
-  #g4-gateway.box {
-    position: relative; z-index: 2;
-    background: rgba(20,20,20,0.85);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px;
-    padding: 28px 24px;
-    width: 88%; max-width: 360px;
     text-align: center;
   }
-  #g4-gateway h1 { font-size: 22px; font-weight: 700; margin: 0 0 8px; }
-  #g4-gateway p { font-size: 14px; color: #aaa; margin: 0 0 20px; }
   
-  #g4-gateway.btn {
-    width: 100%; padding: 14px; font-size: 16px;
-    font-weight: 700; border-radius: 10px; border: none;
-    cursor: pointer; display: block; margin-bottom: 10px;
-    text-decoration: none;
+  #g4-gateway .wrap {
+    max-width: 500px;
+    width: 100%;
   }
-  #g4-gateway.btn-main { background: #fff; color: #000; }
-  #g4-gateway.note { font-size: 12px; color: #aaa; margin: -4px 0 14px 0; }
-  #g4-gateway.btn-sub { 
-    background: transparent; color: rgba(255,255,255,0.5); /* FAINT */
-    border: 1px solid rgba(255,255,255,0.15); font-weight: 600;
+  
+  #g4-gateway .brand {
+    font-size: 14px; font-weight: 600; 
+    letter-spacing: 0.5px; color: #aaa;
+    margin-bottom: 30px;
+  }
+  
+  #g4-gateway h1 { 
+    font-size: 32px; font-weight: 800; 
+    margin: 0 0 12px; line-height: 1.1;
+  }
+  
+  #g4-gateway .meta { 
+    display: flex; gap: 8px; justify-content: center;
+    flex-wrap: wrap; margin: 0 0 18px;
+    font-size: 14px; color: #aaa;
+  }
+  #g4-gateway .chip {
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+  
+  #g4-gateway p { 
+    font-size: 15px; color: #ccc; 
+    line-height: 1.5; margin: 0 0 24px;
+  }
+  
+  #g4-gateway .btn {
+    width: 100%; max-width: 280px;
+    padding: 16px 20px; font-size: 17px;
+    font-weight: 700; border-radius: 24px; /* PILL BUTTON */
+    border: none; cursor: pointer; display: block;
+    margin: 0 auto 8px auto; text-decoration: none;
+  }
+  #g4-gateway .btn-main {
+    background: #fff; color: #000; /* WHITE PILL */
+  }
+  #g4-gateway .note {
+    font-size: 13px; color: #888; margin-bottom: 18px;
+  }
+  #g4-gateway .btn-sub {
+    background: transparent; 
+    color: rgba(255,255,255,0.5); /* FAINT */
+    border: 1px solid rgba(255,255,255,0.15);
+    font-weight: 600;
   }
   
   #g4-gateway.hidden { display: none; }
@@ -117,20 +114,22 @@
 </style>
 
 <div id="g4-gateway">
-  <!-- 6 PHOTO SLOTS -->
-  <div class="photos">
-    <img src="posters/film1.png" alt="" onerror="this.remove()">
-    <img src="posters/film2.png" alt="" onerror="this.remove()">
-    <img src="posters/film3.png" alt="" onerror="this.remove()">
-    <img src="posters/film4.png" alt="" onerror="this.remove()">
-    <img src="posters/film5.png" alt="" onerror="this.remove()">
-    <img src="posters/film6.png" alt="" onerror="this.remove()">
-  </div>
-  
-  <!-- CENTER CARD -->
-  <div class="box">
-    <h1>4thGROUND</h1>
-    <p>Independent Cinema. One Store.</p>
+  <div class="wrap">
+    <div class="brand">4thGROUND</div>
+    
+    <h1>Independent Cinema</h1>
+    
+    <div class="meta">
+      <span>One Store</span>
+      <span>•</span>
+      <span>Rent</span>
+      <span>•</span>
+      <span>Buy</span>
+      <span>•</span>
+      <span class="chip">HD</span>
+    </div>
+    
+    <p>Stream award-winning films instantly. Support independent filmmakers directly.</p>
     
     <a href="https://watch.4thground.com" class="btn btn-main">Watch Movies</a>
     <div class="note">No subscription required</div>
