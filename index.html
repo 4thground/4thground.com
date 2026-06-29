@@ -82,7 +82,11 @@ is this code correct?
     filter:brightness(.45);
     will-change:opacity,transform;
 }
-
+#g4-slides img.active {
+  opacity: 1;
+  transform: scale(1.05);
+}
+    
 #g4-slides::after{
     content:"";
     position:absolute;
