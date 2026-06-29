@@ -43,70 +43,69 @@
 </script>
 </head>
 <body class="bg-black text-white">
-    <!-- 4THGROUND STORE-STYLE GATE -->
+    <!-- 4THGROUND GATE V12 -->
 <style>
   #g4-gateway {
-    position: fixed; inset: 0;
-    z-index: 99999; 
-    background: #000;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif;
-    color: #fff;
-    padding: 0 20px;
-    display: flex; align-items: center; justify-content: center;
+    position: fixed; inset: 0; z-index: 99999; 
+    background: #000; font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    color: #fff; overflow: hidden;
+  }
+  
+  /* SLIDESHOW */
+  #g4-slides { position: absolute; inset: 0; z-index: 0; }
+  #g4-slides img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;
+    filter: brightness(0.4) blur(1px);
+  }
+  #g4-slides img.active { opacity: 1; }
+  #g4-slides::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.9) 80%, #000 100%);
+    z-index: 1;
+  }
+
+  /* CONTENT */
+  #g4-gateway.wrap {
+    position: relative; z-index: 2; height: 100%;
+    padding: 0 20px; display: flex; align-items: center; justify-content: center;
     text-align: center;
   }
+  #g4-gateway.box { max-width: 500px; width: 100%; }
   
-  #g4-gateway .wrap {
-    max-width: 500px;
-    width: 100%;
-  }
+  #g4-gateway.brand { font-size: 14px; font-weight: 600; letter-spacing: 0.5px; color: #aaa; margin-bottom: 30px; }
+  #g4-gateway h1 { font-size: 32px; font-weight: 800; margin: 0 0 12px; }
+  #g4-gateway.meta { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 0 0 18px; font-size: 14px; color: #aaa; }
+  #g4-gateway.chip { border: 1px solid #444; border-radius: 4px; padding: 2px 6px; font-size: 12px; }
+  #g4-gateway p { font-size: 15px; color: #ccc; line-height: 1.5; margin: 0 0 24px; }
   
-  #g4-gateway .brand {
-    font-size: 14px; font-weight: 600; 
-    letter-spacing: 0.5px; color: #aaa;
-    margin-bottom: 30px;
+  /* BUTTONS HOVER */
+  #g4-gateway.btn {
+    width: 100%; max-width: 280px; padding: 16px 20px; font-size: 17px;
+    font-weight: 700; border-radius: 24px; border: none; cursor: pointer;
+    display: block; margin: 0 auto 8px auto; transition: all 0.2s ease;
   }
+  #g4-gateway.btn-main { background: #fff; color: #000; }
+  #g4-gateway.btn-main:hover { transform: scale(1.03); background: #e5e5e5; }
+  #g4-gateway.note { font-size: 13px; color: #888; margin-bottom: 18px; }
+  #g4-gateway.btn-sub { 
+    background: transparent; color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.15); font-weight: 600;
+  }
+  #g4-gateway.btn-sub:hover { background: rgba(255,255,255,0.05); color: #fff; }
   
-  #g4-gateway h1 { 
-    font-size: 32px; font-weight: 800; 
-    margin: 0 0 12px; line-height: 1.1;
+  /* LAUNCHING SOON */
+  #g4-soon {
+    position: fixed; inset: 0; z-index: 3; background: rgba(0,0,0,0.95);
+    display: none; align-items: center; justify-content: center;
+    text-align: center; padding: 20px;
   }
-  
-  #g4-gateway .meta { 
-    display: flex; gap: 8px; justify-content: center;
-    flex-wrap: wrap; margin: 0 0 18px;
-    font-size: 14px; color: #aaa;
-  }
-  #g4-gateway .chip {
-    border: 1px solid #444;
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-size: 12px;
-  }
-  
-  #g4-gateway p { 
-    font-size: 15px; color: #ccc; 
-    line-height: 1.5; margin: 0 0 24px;
-  }
-  
-  #g4-gateway .btn {
-    width: 100%; max-width: 280px;
-    padding: 16px 20px; font-size: 17px;
-    font-weight: 700; border-radius: 24px; /* PILL BUTTON */
-    border: none; cursor: pointer; display: block;
-    margin: 0 auto 8px auto; text-decoration: none;
-  }
-  #g4-gateway .btn-main {
-    background: #fff; color: #000; /* WHITE PILL */
-  }
-  #g4-gateway .note {
-    font-size: 13px; color: #888; margin-bottom: 18px;
-  }
-  #g4-gateway .btn-sub {
-    background: transparent; 
-    color: rgba(255,255,255,0.5); /* FAINT */
-    border: 1px solid rgba(255,255,255,0.15);
-    font-weight: 600;
+  #g4-soon.show { display: flex; }
+  #g4-soon h2 { font-size: 24px; margin: 0 0 8px; }
+  #g4-soon p { color: #aaa; margin: 0 0 20px; }
+  #g4-soon.btn-back {
+    background: #fff; color: #000; padding: 14px 24px;
+    border-radius: 24px; border: none; font-weight: 700; cursor: pointer;
   }
   
   #g4-gateway.hidden { display: none; }
@@ -114,27 +113,36 @@
 </style>
 
 <div id="g4-gateway">
+  <div id="g4-slides">
+    <img src="posters/film1.png" alt="" class="active" onerror="this.remove()">
+    <img src="posters/film2.png" alt="" onerror="this.remove()">
+    <img src="posters/film3.png" alt="" onerror="this.remove()">
+    <img src="posters/film4.png" alt="" onerror="this.remove()">
+    <img src="posters/film5.png" alt="" onerror="this.remove()">
+  </div>
+  
   <div class="wrap">
-    <div class="brand">4thGROUND</div>
-    
-    <h1>Independent Cinema</h1>
-    
-    <div class="meta">
-      <span>One Store</span>
-      <span>•</span>
-      <span>Rent</span>
-      <span>•</span>
-      <span>Buy</span>
-      <span>•</span>
-      <span class="chip">HD</span>
+    <div class="box">
+      <div class="brand">4thGROUND</div>
+      <h1>Independent Cinema</h1>
+      <div class="meta">
+        <span>One Store</span><span>•</span><span>Rent</span><span>•</span><span>Buy</span><span>•</span><span class="chip">HD</span>
+      </div>
+      <p>Stream award-winning films instantly. Support independent filmmakers directly.</p>
+      
+      <button id="g4-watch" class="btn btn-main">Watch Movies</button>
+      <div class="note">No subscription required</div>
+      
+      <button id="g4-enter" class="btn btn-sub">For Filmmakers</button>
     </div>
-    
-    <p>Stream award-winning films instantly. Support independent filmmakers directly.</p>
-    
-    <a href="https://watch.4thground.com" class="btn btn-main">Watch Movies</a>
-    <div class="note">No subscription required</div>
-    
-    <button id="g4-enter" class="btn btn-sub">For Filmmakers</button>
+  </div>
+  
+  <div id="g4-soon">
+    <div>
+      <h2>Launching Soon</h2>
+      <p>We're putting the final touches on the store.</p>
+      <button id="g4-back" class="btn-back">Back</button>
+    </div>
   </div>
 </div>
 
@@ -142,12 +150,42 @@
   document.body.classList.add('locked');
   history.replaceState(null, '', '#gate');
 
+  // 1. 5 ARTWORK SLIDESHOW - 3s
+  const slides = document.querySelectorAll('#g4-slides img');
+  let current = 0;
+  if(slides.length > 1) {
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 3000);
+  }
+
+  // 2. WHITELIST CHECK - ONLY THIS URL WORKS
+  const WATCH_URL = "https://watch.4thground.com"; // <-- Change this to test
+  const ALLOWED_URL = "https://watch.4thground.com"; 
+
+  document.getElementById('g4-watch').onclick = function() {
+    if(WATCH_URL === ALLOWED_URL) {
+      window.location.href = WATCH_URL; // GO TO STORE
+    } else {
+      document.getElementById('g4-soon').classList.add('show'); // SHOW LAUNCHING SOON
+    }
+  };
+
+  // 3. BACK BUTTON
+  document.getElementById('g4-back').onclick = function() {
+    document.getElementById('g4-soon').classList.remove('show');
+  };
+
+  // 4. FOR FILMMAKERS
   document.getElementById('g4-enter').onclick = function() {
     document.getElementById('g4-gateway').classList.add('hidden');
     document.body.classList.remove('locked');
     history.pushState(null, '', '#site');
   };
 
+  // 5. BACK BUTTON TRAP
   window.onpopstate = function() {
     document.getElementById('g4-gateway').classList.remove('hidden');
     document.body.classList.add('locked');
