@@ -43,7 +43,34 @@
 </script>
 </head>
 <body class="bg-black text-white">
-    
+    <script>
+  // Always show gateway on load. No cookies, no sessionStorage.
+  document.body.classList.add('g4-locked');
+  const gateway = document.getElementById('g4-gateway');
+
+  // Push a fake history entry so Back = close gateway
+  history.pushState({g4: 'gateway'}, '', '#gateway');
+
+  document.getElementById('g4-enter').onclick = () => {
+    gateway.classList.add('hidden');
+    document.body.classList.remove('g4-locked');
+    history.pushState({g4: 'inside'}, '', window.location.pathname); // Move them "inside"
+  };
+
+  // If user presses Back while inside, show gateway again
+  window.onpopstate = (e) => {
+    if (e.state && e.state.g4 === 'gateway') {
+      gateway.classList.remove('hidden');
+      document.body.classList.add('g4-locked');
+    }
+  };
+
+  // If they land with #gateway in URL, force it open
+  if (window.location.hash === '#gateway') {
+    gateway.classList.remove('hidden');
+    document.body.classList.add('g4-locked');
+  }
+</script>
     <!-- Nav -->
     <nav class="absolute top-0 w-full z-20 bg-gradient-to-b from-black/80 to-transparent">
         <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
