@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preload" as="image" href="/posters/film1.png">
-<link rel="preload" as="image" href="/posters/film2.png">
-<link rel="preload" as="image" href="/posters/film3.png">
-<link rel="preload" as="image" href="/posters/film4.png">
-<link rel="preload" as="image" href="/posters/film5.png">
+
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,202 +46,60 @@
 </head>
 <body class="bg-black text-white">
 <!-- 4THGROUND GATEWAY V13 CORRECT -->
-<style>
-  #g4-gateway {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    background: #000;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Arial, sans-serif;
-    color: #fff;
-    overflow: hidden;
-  }
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('locked');
+  history.replaceState(null, '', '#gate');
 
-  #g4-slides {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
+  const slides = [...document.querySelectorAll("#g4-slides img")];
 
- #g4-slides img{
-    position:absolute;
-    inset:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
+  let current = 0;
 
-    opacity:0;
-    transform:scale(1);
-    transition:
-        opacity 1.4s ease-in-out,
-        transform 8s linear;
+  slides.forEach(img => {
+    const preload = new Image();
+    preload.src = img.src;
+  });
 
-    filter:brightness(.45);
-    will-change:opacity,transform;
-}
+  setInterval(() => {
+    slides[current].classList.remove("active");
 
-#g4-slides::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-        radial-gradient(circle at center,
-            rgba(0,0,0,0) 0%,
-            rgba(0,0,0,.15) 45%,
-            rgba(0,0,0,.45) 75%,
-            rgba(0,0,0,.75) 100%),
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.15),
-            rgba(0,0,0,.75),
-            #000);
-    z-index:2;
-}
-    
+    current++;
 
-  /* FIXED SELECTORS */
+    if (current >= slides.length) {
+      current = 0;
+    }
 
-  #g4-gateway .wrap {
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+    slides[current].classList.add("active");
+  }, 3000);
 
-  #g4-gateway .box {
-    max-width: 500px;
-    width: 100%;
-  }
+  const WATCH_URL = "https://watch.4thground.com"; 
+  const ALLOWED_URL = "https://watch.4thground.com"; 
 
-  #g4-gateway .brand {
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: .5px;
-    color: #aaa;
-    margin-bottom: 30px;
-  }
+  document.getElementById('g4-watch').onclick = function () {
+    if (WATCH_URL === ALLOWED_URL) {
+      window.location.href = WATCH_URL;
+    } else {
+      document.getElementById('g4-soon').classList.add('show');
+    }
+  };
 
-  #g4-gateway h1 {
-    font-size: 32px;
-    font-weight: 800;
-    margin: 0 0 12px;
-    line-height: 1.1;
-  }
+  document.getElementById('g4-back').onclick = function () {
+    document.getElementById('g4-soon').classList.remove('show');
+  };
 
-  #g4-gateway .meta {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 0 18px;
-    font-size: 14px;
-    color: #aaa;
-  }
+  document.getElementById('g4-enter').onclick = function () {
+    document.getElementById('g4-gateway').classList.add('hidden');
+    document.body.classList.remove('locked');
+    history.pushState(null, '', '#site');
+  };
 
-  #g4-gateway .chip {
-    border: 1px solid #444;
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-size: 12px;
-  }
-
-  #g4-gateway p {
-    font-size: 15px;
-    color: #ccc;
-    line-height: 1.5;
-    margin: 0 0 24px;
-  }
-
-  #g4-gateway .btn {
-    width: 100%;
-    max-width: 280px;
-    padding: 16px 20px;
-    font-size: 17px;
-    font-weight: 700;
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto 8px;
-    transition: all .2s ease;
-  }
-
-  #g4-gateway .btn-main {
-    background: #fff;
-    color: #000;
-  }
-
-  #g4-gateway .btn-main:hover {
-    transform: scale(1.03);
-    background: #e5e5e5;
-  }
-
-  #g4-gateway .note {
-    font-size: 13px;
-    color: #888;
-    margin-bottom: 18px;
-  }
-
-  #g4-gateway .btn-sub {
-    background: transparent;
-    color: rgba(255,255,255,.5);
-    border: 1px solid rgba(255,255,255,.15);
-    font-weight: 600;
-  }
-
-  #g4-gateway .btn-sub:hover {
-    background: rgba(255,255,255,.05);
-    color: #fff;
-  }
-
-  #g4-soon {
-    position: fixed;
-    inset: 0;
-    z-index: 3;
-    background: rgba(0,0,0,.95);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  #g4-soon.show {
-    display: flex;
-  }
-
-  #g4-soon h2 {
-    font-size: 24px;
-    margin: 0 0 8px;
-  }
-
-  #g4-soon p {
-    color: #aaa;
-    margin: 0 0 20px;
-  }
-
-  #g4-soon .btn-back {
-    background: #fff;
-    color: #000;
-    padding: 14px 24px;
-    border-radius: 24px;
-    border: none;
-    font-weight: 700;
-    cursor: pointer;
-  }
-
-  #g4-gateway.hidden {
-    display: none !important;
-  }
-
-  body.locked {
-    overflow: hidden !important;
-  }
-</style>
+  window.onpopstate = function () {
+    document.getElementById('g4-gateway').classList.remove('hidden');
+    document.body.classList.add('locked');
+    history.pushState(null, '', '#gate');
+  };
+});
+</script>
 <div id="g4-gateway">
   <div id="g4-slides">
     <img src="/posters/film1.png" alt="" class="active" onerror="this.remove()">
